@@ -43,6 +43,8 @@ dependencies:
   http: ^1.2.2
   provider: ^6.1.2
   shared_preferences: ^2.3.2
+  google_sign_in: ^6.2.1
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:
