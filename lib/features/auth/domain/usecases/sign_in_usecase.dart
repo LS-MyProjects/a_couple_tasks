@@ -1,4 +1,4 @@
-import 'package:a_couple_tasks/features/auth/domain/entities/user.dart';
+import 'package:a_couple_tasks/features/auth/domain/entities/user_entity.dart';
 import 'package:a_couple_tasks/features/auth/domain/repositories/user_repository.dart';
 
 class SignInUsecase {
@@ -8,16 +8,16 @@ class SignInUsecase {
     required UserRepository userRepository,
 }) : _userRepository = userRepository;
 
-  Future<User> call({
+  Future<UserEntity> call({
     required String email,
     required String password,
 }) async {
-    return User.fromModel(
+    return UserEntity.fromModel(
         await _userRepository.signInWithEmail(email, password)
     );
   }
 
-  Future<User> singInWithGoogle() async {
-    return User.fromModel(await _userRepository.signInWithGoogle());
+  Future<UserEntity> singInWithGoogle() async {
+    return UserEntity.fromModel(await _userRepository.signInWithGoogle());
   }
 }
